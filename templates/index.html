@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+ <!--   <div class="card">
+      <div class="card-body">
+        <h3>{{ task.product }}</h3>
+        <p>Product Name : {{task.product_name}}</p>
+        <p>Added by {{ task.username }}</p>
+        <p>Review : {{task.review}}</p>
+        <a href="{{ url_for('delete', task_id=task.id) }}" class="btn btn-danger">Delete</a>
+      </div>
+    </div> -->
+
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="testimonial-slider" class="owl-carousel">
+               {% for task in reviews %}
+                <div class="testimonial">
+                    <h3 class="title">{{ task.product_name }}
+                        <span class="post">- Added by {{ task.username }}</span>
+                    </h3>
+                    <p class="description">
+                        {{task.review}}
+                    </p>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

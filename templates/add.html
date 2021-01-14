@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container-fluid">
+  <form action="{{ url_for('add') }}" method="post" class="decor">
+    {{ form.csrf_token }}
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+      <div class="form-inner">
+        <h3>Add New Review</h3>
+
+      <div class="col">
+        {{ form.username(class="form-control", placeholder="Username") }}
+      </div>
+        <div>
+            {{ form.product(class="form-control" , placeholder="Product Name") }}
+        </div>
+        <div>
+            {{ form.review(class="form-control" , placeholder="Comment...") }}
+        </div>
+      <div class="col">
+        {{ form.submit(class="btn btn-primary") }}
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
